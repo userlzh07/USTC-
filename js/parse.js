@@ -335,10 +335,18 @@ const Parse = (() => {
       if (!cells.length) continue;
 
       let it = null;
-      // EAMS 明细：第1列是学期、第2列是课程名 → 按列取
-      if (cells.length >= 6 && /20\d{2}/.test(cells[0]) && /[春夏秋]/.test(cells[0]) && /[\u4e00-\u9fa5]/.test(cells[1] || "")) {
-        it = parseEams(cells);
-        if (it && it.term) curTerm = it.term;
+      const firstIsTerm = /^20\d{2}\s*[春夏秋]/.test(cells[0] || "") || /学期/.test(cells[0] || "");
+      if (firstIsTerm) {
+        // EAMS 明细（8列 tab 导出）：第1列=学期、第2列=课程名 → 按列取
+        if (isTab && cells.length >= 6 && /[\u4e00-\u9fa5]/.test(cells[1] || "")) {
+          it = parseEams(cells);
+          if (it && it.term) curTerm = it.term;
+        } else {
+          // 纯学期标志（col0 是学期、没有课程名）→ 只切学期，绝不当作课程
+          const t = normTerm(cells[0]);
+          if (t) curTerm = t;
+          continue;
+        }
       }
       // 真实格式：第2列是学时(≥10整数) → 按列位置
       else if (cells.length >= 4 && looksLikeHours(parseFloat(cells[1]))) it = parseByPosition(cells, curTerm);

@@ -30,8 +30,10 @@ const Planner = (() => {
 
   /* ---------- 补全：把"必修未排/论文"加进板（不动已有安排） ---------- */
   function topUp(ds) {
+    const takenIds = new Set(ds.taken.map(t => t.id));        // 已修即不再规划
+    // 移除板上已修的课（含备选池/已排的），避免"已修还挂在规划池里"
+    ds.board = ds.board.filter(b => !takenIds.has(b.id));
     const inBoard = new Set(ds.board.map(b => b.id + "@" + b.plan));
-    const takenKey = new Set(ds.taken.map(t => t.id + "@" + t.track));
     const added = [];
     const T = terms(ds);
 
@@ -42,7 +44,7 @@ const Planner = (() => {
         n.items.forEach(it => {
           if (it.state === "missing" && it.id !== "GAP") {
             const k = it.id + "@" + plan.id;
-            if (!inBoard.has(k) && !takenKey.has(k)) {
+            if (!inBoard.has(k) && !takenIds.has(it.id)) {
               ds.board.push({ id: it.id, plan: plan.id, term: null });
               inBoard.add(k); added.push(it.name);
             }
@@ -60,7 +62,7 @@ const Planner = (() => {
           tid = "THESIS-" + plan.id;
           Model.ensureCourse(tid, { name: plan.thesis.name || "毕业论文", credits: plan.thesis.credits || 8 });
         }
-        if (!inBoard.has(tid + "@" + plan.id) && !takenKey.has(tid + "@" + plan.id)) {
+        if (!inBoard.has(tid + "@" + plan.id) && !takenIds.has(tid)) {
           ds.board.push({ id: tid, plan: plan.id, term: T[T.length - 1], thesis: true });
         }
       }
