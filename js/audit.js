@@ -10,16 +10,42 @@ const Audit = (() => {
   const crOf = (id) => { const c = Model.course(id); return c ? c.credits : 0; };
   const nameOf = (id) => { const c = Model.course(id); return c ? c.name : id; };
 
-  /* 模块内一门的命中情况: {id, alt} x taken */
-  function hitCourse(c, taken) {
+  /* 双向替代关系图：subPairs [a,b] 表示 a 可替 b 且 b 可替 a（官方替代规则），
+     也纳入模块自带的显式 alt。返回 id -> Set(可满足该 id 的替代课) */
+  function subMap() {
+    const m = new Map();
+    const link = (a, b) => {
+      for (const x of [String(a), String(b)]) if (x) { if (!m.has(x)) m.set(x, new Set()); m.get(x).add(String(a)); m.get(x).add(String(b)); }
+    };
+    if (typeof USTC_DATA !== "undefined" && USTC_DATA.subPairs) {
+      USTC_DATA.subPairs.forEach(([a, b]) => link(a, b));
+    }
+    return m;
+  }
+
+  /* 模块内一门的命中情况: {id, alt} x taken（含双向替代，已用替换课防重复）
+     ctx: { subMap, consumed }  */
+  function hitCourse(c, taken, ctx) {
     if (taken[c.id]) return { t: taken[c.id], alt: false };
-    if (c.alt && taken[c.alt]) return { t: taken[c.alt], alt: true };
+    // 显式 alt
+    if (c.alt) {
+      const t = taken[c.alt];
+      if (t && !ctx.consumed.has(c.alt)) { ctx.consumed.add(c.alt); return { t, alt: true }; }
+    }
+    // 双向官方替代：任一门已修且未被占用的替换课
+    const cands = ctx.subMap.get(c.id);
+    if (cands) {
+      for (const sid of cands) {
+        const t = taken[sid];
+        if (t && !ctx.consumed.has(sid)) { ctx.consumed.add(sid); return { t, alt: true }; }
+      }
+    }
     return null;
   }
 
   /* ---------- 递归求值一个模块 ----------
      boardTerm: { term -> [{id, plan, term}] }（"pool" 键 = 待选池，不计入） */
-  function evalNode(node, taken, boardTerm) {
+  function evalNode(node, taken, boardTerm, ctx) {
     const res = {
       id: node.id, name: node.name, type: node.type || "required",
       credits: node.credits || 0, doneCr: 0, planCr: 0,
@@ -30,12 +56,12 @@ const Audit = (() => {
 
     // 已修
     node.courses.forEach(c => {
-      const h = hitCourse(c, taken);
+      const h = hitCourse(c, taken, ctx);
       if (h) {
         res.doneCr += crOf(h.t.id);
         res.items.push({
-          id: c.id, name: nameOf(c.id), credits: crOf(c.id), state: "done",
-          altNote: h.alt ? `以「${nameOf(c.alt)}」替代` : ""
+          id: c.id, name: nameOf(c.id), credits: crOf(h.t.id), state: "done",
+          altNote: h.alt ? `以「${nameOf(h.t.id)}」替代` : ""
         });
       }
     });
@@ -51,10 +77,9 @@ const Audit = (() => {
         res.items.push({ id: b.id, name: nameOf(b.id), credits: crOf(b.id), state: "planned", term });
       });
     });
-    // 缺课程项
+    // 缺课程项（只对尚未被认作"已修/已排"的课补缺口）
     node.courses.forEach(c => {
-      if (hitCourse(c, taken)) return;
-      if (res.items.some(it => it.id === c.id && it.state === "planned")) return;
+      if (res.items.some(it => it.id === c.id && (it.state === "done" || it.state === "planned"))) return;
       const co = Model.course(c.id);
       res.items.push({
         id: c.id, name: co ? co.name : (c.name || c.id), credits: co ? co.credits : 0,
@@ -62,7 +87,7 @@ const Audit = (() => {
       });
     });
 
-    if (node.subs) node.subs.forEach(sub => res.subs.push(evalNode(sub, taken, boardTerm)));
+    if (node.subs) node.subs.forEach(sub => res.subs.push(evalNode(sub, taken, boardTerm, ctx)));
 
     if (node.type === "pool") {
       res.surplus = Math.max(0, res.doneCr + res.planCr - (node.credits || 0));
@@ -78,7 +103,8 @@ const Audit = (() => {
 
   /* ---------- 单方案审计 ---------- */
   function auditPlan(plan, taken, boardTerm, allTaken) {
-    const mods = plan.modules.map(m => evalNode(m, taken, boardTerm));
+    const ctx = { subMap: subMap(), consumed: new Set() };
+    const mods = plan.modules.map(m => evalNode(m, taken, boardTerm, ctx));
 
     // 是否有论文模块（决定 free 扣不扣论文学分）
     let hasThesisModule = false;
@@ -102,16 +128,16 @@ const Audit = (() => {
     let poolSurplus = 0;
     (function sp(n) { if (n.type === "pool") poolSurplus += n.surplus || 0; (n.subs || []).forEach(sp); })({ type: "root", subs: mods });
 
-    // 模块内出现的课程 id 集合
-    const moduleIds = new Set();
+    // 模块内出现的课程 id 集合（含显式 alt，以便散课归类）
+    const moduleIds = new Set(Array.from(ctx.consumed));   // 被用作替代的课不算散课
     Model.walkModules(plan.modules, m => m.courses.forEach(c => { moduleIds.add(c.id); if (c.alt) moduleIds.add(c.alt); }));
 
-    // 散课（已修但不属于任何模块）→ 自由选修
+    // 散课（已修但不属于任何模块、也未被用作替代）→ 自由选修
     let leftover = 0, pending = 0;
     const freeItems = [];
     allTaken.forEach(t => {
       if (t.track !== plan.id) return;
-      if (moduleIds.has(t.id)) return;
+      if (moduleIds.has(t.id)) return;                    // 已计入模块（含替代）
       const cr = crOf(t.id);
       if (t.inprogress) { pending += cr; freeItems.push({ id: t.id, name: nameOf(t.id), credits: cr, state: "planned", note: "待出分" }); }
       else { leftover += cr; freeItems.push({ id: t.id, name: nameOf(t.id), credits: cr, state: "done", note: t.note || "" }); }

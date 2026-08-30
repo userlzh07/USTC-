@@ -277,6 +277,35 @@ const Parse = (() => {
     return { id, name, credits, term: curTerm || "未知", score, gp, pass: pass && score == null, inprogress };
   }
 
+  /* EAMS 已修明细（教务系统明细导出）：
+     学期 | 课程名 | 编号 | 选课序号 | 学时 | 学分 | 绩点 | 成绩/等级/通过   （学期在每行第1列） */
+  function parseEams(cells) {
+    const term = normTerm(cells[0]);
+    if (!term) return null;
+    const name = cells[1] ? String(cells[1]).trim() : "";
+    const id = cells[2] ? String(cells[2]).trim() : "";
+    if (!name) return null;
+    let credits = null, score = null, gp = null, pass = false, inprogress = false;
+    const cv = parseFloat(cells[5]);
+    if (!isNaN(cv) && cv > 0 && cv <= 12) credits = cv;
+    const gpCell = cells[6] ? String(cells[6]).trim() : "";
+    if (isGrade(gpCell)) gp = GRADE[gpCell];
+    else {
+      const gv = parseFloat(gpCell);
+      if (!isNaN(gv) && gv >= 1 && gv <= 4.3) gp = gv;
+    }
+    const scoreCell = cells[7] ? String(cells[7]).trim() : "";
+    if (isGrade(scoreCell)) { gp = GRADE[scoreCell]; }
+    else if (/进行中|在修|未出分/.test(scoreCell)) inprogress = true;
+    else if (isPassWord(scoreCell)) pass = true;
+    else {
+      const sv = parseFloat(scoreCell);
+      if (!isNaN(sv)) { if (Number.isInteger(sv) && sv > 40 && sv <= 100) score = sv; }
+    }
+    if (credits == null) return null;
+    return { id, name, credits, term, score, gp, pass: pass && score == null, inprogress };
+  }
+
   function parseTranscript(text) {
     const items = [], warn = [];
     let curTerm = null;
@@ -306,8 +335,13 @@ const Parse = (() => {
       if (!cells.length) continue;
 
       let it = null;
+      // EAMS 明细：第1列是学期、第2列是课程名 → 按列取
+      if (cells.length >= 6 && /20\d{2}/.test(cells[0]) && /[春夏秋]/.test(cells[0]) && /[\u4e00-\u9fa5]/.test(cells[1] || "")) {
+        it = parseEams(cells);
+        if (it && it.term) curTerm = it.term;
+      }
       // 真实格式：第2列是学时(≥10整数) → 按列位置
-      if (cells.length >= 4 && looksLikeHours(parseFloat(cells[1]))) it = parseByPosition(cells, curTerm);
+      else if (cells.length >= 4 && looksLikeHours(parseFloat(cells[1]))) it = parseByPosition(cells, curTerm);
       else it = parseLegacy(cells, curTerm);
       if (!it) { warn.push("无法识别行: " + line0.slice(0, 50)); continue; }
       items.push(it);
