@@ -1,0 +1,17 @@
+# ---- 个人数据 / 隐私 ----
+# 不公开个人成绩单样例
+samples/成绩单.txt
+samples/*.txt
+
+# ---- 开发测试/临时脚本（非发布内容）----
+tools/debug/
+tools/smoke.js
+tools/test-paste.js
+tools/debug-docx.js
+tools/debug-palette.js
+test.js
+
+# ---- 系统 / 编辑器 ----
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>学业规划器 v2 · 培养方案对照与选课规划</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>🎓 学业规划器 <span class="v2tag">v2</span></h1>
+    <div class="sub" id="ds-info"></div>
+  </div>
+  <div class="head-actions">
+    <span id="save-status" class="save-dot" title="自动保存到浏览器本地">● 已保存</span>
+    <button id="btn-backup" class="btn ghost">⬇ 备份JSON</button>
+    <button id="btn-plan-csv" class="btn ghost">⬇ 规划CSV</button>
+    <button id="btn-undo" class="btn ghost" title="撤销上一次导入/删除">↩ 撤销</button>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-panel="import">📥 数据导入</button>
+  <button class="tab" data-panel="overview">📊 总览</button>
+  <button class="tab" data-panel="taken">📚 已修课程</button>
+  <button class="tab" data-panel="plan">🗓️ 未来规划</button>
+  <button class="tab" data-panel="struct">🌳 培养方案</button>
+  <button class="tab" data-panel="catalog">📇 课程库</button>
+</nav>
+
+<main>
+  <!-- ============ 数据导入 ============ -->
+  <section id="panel-import" class="panel active">
+    <div class="welcome" id="import-hero">
+      👋 <b>欢迎使用学业规划器</b> — 已内置科大全量公开数据（最新学期开课 + 全部培养方案 + 官方课程替代规则），三步上手：<br>
+      ① 到「<b>培养方案</b>」页搜索并添加你的培养方案（1201 份内置）&nbsp; ② 本页导入成绩单，或在「<b>已修课程</b>」页搜索拖拽录入 &nbsp; ③ 到「<b>未来规划</b>」页拖课排期，冲突与缺口自动预警
+    </div>
+    <div class="import-grid">
+      <div class="card imp-card">
+        <h3>📄 培养方案 <span class="muted">（docx / 粘贴文本）</span></h3>
+        <p class="muted">支持教务系统导出的培养方案 docx（自动识别模块与开课学期）。旧版 .doc 请先用 Word 另存为 .docx。</p>
+        <label class="file-drop" id="drop-plan">
+          <input type="file" id="file-plan" accept=".docx">
+          <span>点击选择或拖入 .docx 文件</span>
+        </label>
+        <details>
+          <summary class="muted">没有 docx？粘贴文本解析</summary>
+          <textarea id="paste-plan" rows="5" placeholder="每行：课程名称 学分&#10;模块行包含「要求学分」或以冒号结尾"></textarea>
+          <button id="btn-parse-plan-text" class="btn">解析粘贴内容</button>
+        </details>
+        <div id="plan-preview"></div>
+      </div>
+
+      <div class="card imp-card">
+        <h3>📊 已修成绩单 <span class="muted">（docx / CSV / 粘贴）</span></h3>
+        <p class="muted">支持教务系统成绩单 docx、CSV，或成绩页面复制粘贴。也可以在「已修课程」页直接搜索拖拽录入，成绩/绩点都可后补。</p>
+        <label class="file-drop" id="drop-score">
+          <input type="file" id="file-score" accept=".csv,.txt,.docx">
+          <span>点击选择或拖入 成绩单.docx / .csv / .txt</span>
+        </label>
+        <details>
+          <summary class="muted">直接粘贴成绩文本</summary>
+          <textarea id="paste-score" rows="5" placeholder="2024秋&#10;数学分析(B1)  6  83  3.3"></textarea>
+          <button id="btn-parse-score-text" class="btn">解析粘贴内容</button>
+        </details>
+        <div id="score-preview"></div>
+      </div>
+
+      <div class="card imp-card">
+        <h3>🤖 教务系统爬虫数据 <span class="muted">（JSON）</span></h3>
+        <p class="muted">运行 <code>crawler/ustc_crawler.py</code> 生成数据文件后导入。默认模式只抓 <b>catalog.ustc.edu.cn 公开目录</b>（全部开课含上课时间 + 全部 1201 份培养方案），完全不登录教务账号；加 <code>--with-personal</code> 才会慢速抓个人成绩/课表。</p>
+        <label class="file-drop" id="drop-crawler">
+          <input type="file" id="file-crawler" accept=".json">
+          <span>点击选择或拖入 ustc_dataset.json</span>
+        </label>
+        <div id="crawler-log"></div>
+      </div>
+
+      <div class="card imp-card">
+        <h3>📦 内置科大数据 <span class="muted">（开箱即用，免爬虫）</span></h3>
+        <p class="muted">来自 catalog.ustc.edu.cn 公开目录（<span id="emb-info"></span>）。导入后课程全部带上课时间；培养方案在「培养方案」页选择添加。</p>
+        <div class="btn-col">
+          <button id="btn-emb-catalog" class="btn primary">⬇ 导入 <span class="emb-n-courses"></span> 门开课（含上课时间）</button>
+          <button id="btn-goto-struct" class="btn">📚 去添加内置培养方案（1201 份可选）</button>
+        </div>
+        <div id="emb-log"></div>
+      </div>
+
+      <div class="card imp-card">
+        <h3>💾 备份 / 重置</h3>
+        <div class="btn-col">
+          <button id="btn-restore" class="btn">⬆ 导入备份 JSON</button>
+          <input type="file" id="file-restore" accept=".json" style="display:none">
+          <button id="btn-empty" class="btn danger">🧹 清空全部数据</button>
+        </div>
+        <div class="muted" style="margin-top:10px">所有改动自动保存在本浏览器（localStorage），换电脑请用备份文件迁移。</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>⚙️ 规划设置</h3>
+      <div class="settings-row">
+        <span class="muted">未来学期：</span>
+        <span id="term-chips" class="chips" style="margin:0"></span>
+        <button id="btn-add-term" class="btn">+ 学期</button>
+      </div>
+      <div class="settings-row">
+        <span class="muted">负荷预警 ≥</span>
+        <input type="number" id="set-warn" class="inp-num" min="10" max="60"> 分
+        <span class="muted">危险 ≥</span>
+        <input type="number" id="set-danger" class="inp-num" min="10" max="80"> 分
+      </div>
+      <div class="settings-row">
+        <span class="muted">🎓 入学年份</span>
+        <input type="number" id="set-enroll" class="inp-num" min="2000" max="2100" step="1" title="已修页的学期列按「入学年秋 → 当前学期」自动生成">
+        <span class="muted">📍 当前学期</span>
+        <input id="set-current-term" class="inp-num" style="width:88px" title="如 2026秋">
+        <span class="muted">「已修课程」页的学期列与拖拽归属据此生成</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 总览 ============ -->
+  <section id="panel-overview" class="panel">
+    <div id="donuts" class="donut-row"></div>
+    <div id="warnings" class="warn-panel"></div>
+    <div id="modbars" class="cols" style="align-items:start"></div>
+  </section>
+
+  <!-- ============ 已修课程 ============ -->
+  <section id="panel-taken" class="panel">
+    <div id="taken-summary" class="chips"></div>
+    <div class="plan-zone palette-zone" id="taken-palette-zone"></div>
+    <div id="taken-grid"></div>
+    <details class="card" style="margin-top:16px">
+      <summary style="cursor:pointer;font-weight:600">➕ 手动添加已修课程（成绩/绩点可留空）</summary>
+      <div id="taken-add" class="add-form"></div>
+    </details>
+  </section>
+
+  <!-- ============ 未来规划 ============ -->
+  <section id="panel-plan" class="panel">
+    <div id="plan-head"></div>
+    <div id="plan-board"></div>
+    <div id="plan-warnings" style="margin-top:14px"></div>
+  </section>
+
+  <!-- ============ 培养方案 ============ -->
+  <section id="panel-struct" class="panel">
+    <div id="struct-cards"></div>
+  </section>
+
+  <!-- ============ 课程库 ============ -->
+  <section id="panel-catalog" class="panel">
+    <div class="card">
+      <div class="settings-row">
+        <input id="cat-search" class="inp-search" placeholder="🔍 搜索课程名 / 编号">
+        <button id="btn-cat-add" class="btn">➕ 新增课程</button>
+      </div>
+      <div id="cat-table"></div>
+    </div>
+  </section>
+</main>
+
+<footer>纯本地运行 · 数据不离开浏览器 · 内置 catalog.ustc.edu.cn 公开数据（可随时用 crawler/ 刷新）</footer>
+
+<script src="js/util.js"></script>
+<script src="js/data-ustc.js"></script>
+<script src="js/parse.js"></script>
+<script src="js/model.js"></script>
+<script src="js/audit.js"></script>
+<script src="js/planner.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

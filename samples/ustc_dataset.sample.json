@@ -1,0 +1,1943 @@
+{
+ "student": {},
+ "courses": [
+  {
+   "id": "210515",
+   "name": "电子线路",
+   "credits": 4,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周三1-2节",
+    "周五8-10节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "AI1001A",
+   "name": "人工智能数学原理与算法A",
+   "credits": 4,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周三3-4节",
+    "周五8-9节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "CS1003",
+   "name": "计算机程序设计",
+   "credits": 3,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周二11-13节",
+    "周五8-10节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "EDUS1001",
+   "name": "劳动教育",
+   "credits": 1,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MIL1001",
+   "name": "军事理论",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MIL1002",
+   "name": "军事技能",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MATH1007",
+   "name": "数学分析(B2)",
+   "credits": 6,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MATH1009",
+   "name": "线性代数(B1)",
+   "credits": 4,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周二3-4节",
+    "周四3-4节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "MATH1006",
+   "name": "数学分析(B1)",
+   "credits": 6,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周一3-4节",
+    "周三3-4节",
+    "周五1-2节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PE00001",
+   "name": "基础体育",
+   "credits": 1,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周一6-7节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PHYS1009B",
+   "name": "大学物理-综合实验B",
+   "credits": 0.5,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周二6-9节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PHYS1008B",
+   "name": "大学物理-基础实验B",
+   "credits": 1,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "PHYS1002A",
+   "name": "热学A",
+   "credits": 3,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周一1-2节",
+    "周四6-7节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PHYS1004A",
+   "name": "电磁学A",
+   "credits": 4,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周二1-2节",
+    "周四6-7节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PHYS1001A",
+   "name": "力学A",
+   "credits": 4,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周二6-7节",
+    "周四3-4节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PHYS1005B",
+   "name": "原子物理B",
+   "credits": 2,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周一6-7节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PHYS1003A",
+   "name": "光学A",
+   "credits": 4,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周一6-7节",
+    "周三3-4节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "HS1531",
+   "name": "大学生心理学",
+   "credits": 2,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周二8-10节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "HS1580M",
+   "name": "大学生国家安全教育",
+   "credits": 1,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "FS1001",
+   "name": "“科学与社会”研讨课",
+   "credits": 1,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "HS1003",
+   "name": "艺术实践",
+   "credits": 1,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MARX1005",
+   "name": "思想政治理论课实践",
+   "credits": 2,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MARX1006",
+   "name": "形势与政策(讲座)",
+   "credits": 2,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MARX1010",
+   "name": "中国近现代史纲要",
+   "credits": 2.5,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MARX1011",
+   "name": "马克思主义基本原理",
+   "credits": 2.5,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周一8-10节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "MARX1012",
+   "name": "思想道德与法治",
+   "credits": 2.5,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MARX1013",
+   "name": "毛泽东思想和中国特色社会主义理论体系概论",
+   "credits": 2.5,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "MARX1014",
+   "name": "习近平新时代中国特色社会主义思想概论",
+   "credits": 3,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周五8-10节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "022392",
+   "name": "理论力学A",
+   "credits": 4,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周二3-4节",
+    "周四1-2节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "001506",
+   "name": "数理方程A",
+   "credits": 3,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "022063",
+   "name": "热力学与统计物理B",
+   "credits": 3,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周二3-4节",
+    "周四6-7节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "001505",
+   "name": "复变函数A",
+   "credits": 3,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周一3-4节",
+    "周三6-7节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "022057",
+   "name": "电动力学",
+   "credits": 4,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周三1-2节",
+    "周五8-10节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "STAT2002",
+   "name": "概率论与数理统计",
+   "credits": 3,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周四3-5节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "MATH2001",
+   "name": "计算方法",
+   "credits": 3,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周一6-7节",
+    "周三1-2节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ESS2006",
+   "name": "地球和空间科学基础",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周二3-5节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ESS2009",
+   "name": "地球科学概论-空间科学",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ESS2007",
+   "name": "地球科学概论-地球物理",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ESS2008",
+   "name": "地球科学概论-大气海洋",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ESS2010",
+   "name": "地球科学概论-地球系统",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "007277",
+   "name": "大气探测学",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周一3-5节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "007286",
+   "name": "天气学",
+   "credits": 3,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "007016",
+   "name": "动力气象学",
+   "credits": 4,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "007001",
+   "name": "流体力学",
+   "credits": 4,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周二8-10节",
+    "周四6-7节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "007026",
+   "name": "大气物理学基础",
+   "credits": 4,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周三3-5节",
+    "周五6-7节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "022095",
+   "name": "量子力学C",
+   "credits": 3,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周五3-5节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "007296",
+   "name": "大气电学",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ATMS4009",
+   "name": "气候学概论",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周三3-5节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "EE2503",
+   "name": "电子线路实验",
+   "credits": 1,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周四6-9节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "CS4023",
+   "name": "数据科学导论",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周二8-9节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ATMO5102P",
+   "name": "云和降水物理学",
+   "credits": 2,
+   "seasons": [
+    "夏",
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "007256",
+   "name": "大气科学专题讲座",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "007281",
+   "name": "遥感气象学",
+   "credits": 4,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ATMO5101P",
+   "name": "空气污染气象学",
+   "credits": 3,
+   "seasons": [
+    "夏",
+    "春",
+    "秋"
+   ],
+   "slots": [
+    "周一6-9节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "007231",
+   "name": "气象统计学原理及应用",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周四3-5节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "007313",
+   "name": "大气物理实验",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周五6-10节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ATMS4002",
+   "name": "大气科学基础实习",
+   "credits": 1,
+   "seasons": [
+    "夏"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ATMS4003",
+   "name": "Python数据可视化及地球科学应用",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ATMS4004",
+   "name": "全球变化I",
+   "credits": 2,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [
+    "周二3-5节"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ATMS4005",
+   "name": "全球变化II",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ATMS4006",
+   "name": "古气候学原理",
+   "credits": 2,
+   "seasons": [
+    "春"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ATMS4010",
+   "name": "大气科学综合实习",
+   "credits": 1,
+   "seasons": [
+    "夏"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "ATMS4011",
+   "name": "人工智能与大气科学",
+   "credits": 4,
+   "seasons": [
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "THESIS",
+   "name": "毕业论文",
+   "credits": 8,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  },
+  {
+   "id": "THESIS-M",
+   "name": "毕业论文",
+   "credits": 8,
+   "seasons": [
+    "春",
+    "秋"
+   ],
+   "slots": [],
+   "note": ""
+  }
+ ],
+ "scores": [],
+ "selected": [],
+ "plans": [
+  {
+   "name": "大气科学培养方案（2026级主修）",
+   "total": 125.5,
+   "freePool": true,
+   "thesis": {
+    "name": "毕业论文",
+    "credits": 8
+   },
+   "modules": [
+    {
+     "name": "通修课程",
+     "credits": 0,
+     "type": "container",
+     "courses": [],
+     "subs": [
+      {
+       "name": "计算机通修",
+       "credits": 7,
+       "type": "required",
+       "courses": [
+        {
+         "id": "AI1001A",
+         "name": "人工智能数学原理与算法A",
+         "credits": 4,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "CS1003",
+         "name": "计算机程序设计",
+         "credits": 3,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        }
+       ],
+       "subs": []
+      },
+      {
+       "name": "劳动教育",
+       "credits": 1,
+       "type": "required",
+       "courses": [
+        {
+         "id": "EDUS1001",
+         "name": "劳动教育",
+         "credits": 1,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        }
+       ],
+       "subs": []
+      },
+      {
+       "name": "英语通修",
+       "credits": 0,
+       "type": "container",
+       "courses": [],
+       "subs": []
+      },
+      {
+       "name": "军事教育",
+       "credits": 4,
+       "type": "required",
+       "courses": [
+        {
+         "id": "MIL1001",
+         "name": "军事理论",
+         "credits": 2,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "MIL1002",
+         "name": "军事技能",
+         "credits": 2,
+         "seasons": [
+          "秋"
+         ]
+        }
+       ],
+       "subs": []
+      },
+      {
+       "name": "数学通修",
+       "credits": 16,
+       "type": "required",
+       "courses": [
+        {
+         "id": "MATH1007",
+         "name": "数学分析(B2)",
+         "credits": 6,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "MATH1009",
+         "name": "线性代数(B1)",
+         "credits": 4,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "MATH1006",
+         "name": "数学分析(B1)",
+         "credits": 6,
+         "seasons": [
+          "秋"
+         ]
+        }
+       ],
+       "subs": []
+      },
+      {
+       "name": "体育通修",
+       "credits": 4,
+       "type": "required",
+       "courses": [],
+       "subs": [
+        {
+         "name": "必修",
+         "credits": 1,
+         "type": "required",
+         "courses": [
+          {
+           "id": "PE00001",
+           "name": "基础体育",
+           "credits": 1,
+           "seasons": [
+            "秋"
+           ]
+          }
+         ],
+         "subs": []
+        },
+        {
+         "name": "选修",
+         "credits": 3,
+         "type": "pool",
+         "courses": [],
+         "subs": []
+        }
+       ]
+      },
+      {
+       "name": "物理通修",
+       "credits": 18.5,
+       "type": "required",
+       "courses": [
+        {
+         "id": "PHYS1009B",
+         "name": "大学物理-综合实验B",
+         "credits": 0.5,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "PHYS1008B",
+         "name": "大学物理-基础实验B",
+         "credits": 1,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "PHYS1002A",
+         "name": "热学A",
+         "credits": 3,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "PHYS1004A",
+         "name": "电磁学A",
+         "credits": 4,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "PHYS1001A",
+         "name": "力学A",
+         "credits": 4,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "PHYS1005B",
+         "name": "原子物理B",
+         "credits": 2,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "PHYS1003A",
+         "name": "光学A",
+         "credits": 4,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        }
+       ],
+       "subs": []
+      },
+      {
+       "name": "核心通识课程",
+       "credits": 13,
+       "type": "container",
+       "courses": [],
+       "subs": [
+        {
+         "name": "核心通识必修课",
+         "credits": 5,
+         "type": "container",
+         "courses": [],
+         "subs": [
+          {
+           "name": "心理健康",
+           "credits": 2,
+           "type": "required",
+           "courses": [
+            {
+             "id": "HS1531",
+             "name": "大学生心理学",
+             "credits": 2,
+             "seasons": [
+              "秋",
+              "春"
+             ]
+            }
+           ],
+           "subs": []
+          },
+          {
+           "name": "安全教育",
+           "credits": 1,
+           "type": "required",
+           "courses": [
+            {
+             "id": "HS1580M",
+             "name": "大学生国家安全教育",
+             "credits": 1,
+             "seasons": [
+              "秋"
+             ]
+            }
+           ],
+           "subs": []
+          },
+          {
+           "name": "研讨课程",
+           "credits": 1,
+           "type": "required",
+           "courses": [
+            {
+             "id": "FS1001",
+             "name": "“科学与社会”研讨课",
+             "credits": 1,
+             "seasons": [
+              "秋",
+              "春"
+             ]
+            }
+           ],
+           "subs": []
+          },
+          {
+           "name": "艺术实践",
+           "credits": 1,
+           "type": "required",
+           "courses": [
+            {
+             "id": "HS1003",
+             "name": "艺术实践",
+             "credits": 1,
+             "seasons": [
+              "秋",
+              "春"
+             ]
+            }
+           ],
+           "subs": []
+          }
+         ]
+        },
+        {
+         "name": "核心通识选修课",
+         "credits": 8,
+         "type": "container",
+         "courses": [],
+         "subs": [
+          {
+           "name": "四史一课",
+           "credits": 1,
+           "type": "required",
+           "courses": [],
+           "subs": []
+          },
+          {
+           "name": "选修",
+           "credits": 0,
+           "type": "pool",
+           "courses": [],
+           "subs": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "政治通修",
+       "credits": 17,
+       "type": "required",
+       "courses": [
+        {
+         "id": "MARX1005",
+         "name": "思想政治理论课实践",
+         "credits": 2,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "MARX1006",
+         "name": "形势与政策(讲座)",
+         "credits": 2,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "MARX1010",
+         "name": "中国近现代史纲要",
+         "credits": 2.5,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "MARX1011",
+         "name": "马克思主义基本原理",
+         "credits": 2.5,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "MARX1012",
+         "name": "思想道德与法治",
+         "credits": 2.5,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "MARX1013",
+         "name": "毛泽东思想和中国特色社会主义理论体系概论",
+         "credits": 2.5,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "MARX1014",
+         "name": "习近平新时代中国特色社会主义思想概论",
+         "credits": 3,
+         "seasons": [
+          "秋"
+         ]
+        }
+       ],
+       "subs": []
+      }
+     ]
+    },
+    {
+     "name": "专业基础课程",
+     "credits": 0,
+     "type": "container",
+     "courses": [],
+     "subs": [
+      {
+       "name": "必修",
+       "credits": 25,
+       "type": "required",
+       "courses": [
+        {
+         "id": "022392",
+         "name": "理论力学A",
+         "credits": 4,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "001506",
+         "name": "数理方程A",
+         "credits": 3,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "022063",
+         "name": "热力学与统计物理B",
+         "credits": 3,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "001505",
+         "name": "复变函数A",
+         "credits": 3,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "022057",
+         "name": "电动力学",
+         "credits": 4,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "STAT2002",
+         "name": "概率论与数理统计",
+         "credits": 3,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "MATH2001",
+         "name": "计算方法",
+         "credits": 3,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "ESS2006",
+         "name": "地球和空间科学基础",
+         "credits": 2,
+         "seasons": [
+          "秋"
+         ]
+        }
+       ],
+       "subs": []
+      },
+      {
+       "name": "选修",
+       "credits": 2,
+       "type": "pool",
+       "courses": [
+        {
+         "id": "ESS2009",
+         "name": "地球科学概论-空间科学",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "ESS2007",
+         "name": "地球科学概论-地球物理",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "ESS2008",
+         "name": "地球科学概论-大气海洋",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "ESS2010",
+         "name": "地球科学概论-地球系统",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        }
+       ],
+       "subs": []
+      }
+     ]
+    },
+    {
+     "name": "专业核心课程",
+     "credits": 17,
+     "type": "required",
+     "courses": [
+      {
+       "id": "007277",
+       "name": "大气探测学",
+       "credits": 2,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "007286",
+       "name": "天气学",
+       "credits": 3,
+       "seasons": [
+        "春"
+       ]
+      },
+      {
+       "id": "007016",
+       "name": "动力气象学",
+       "credits": 4,
+       "seasons": [
+        "春"
+       ]
+      },
+      {
+       "id": "007001",
+       "name": "流体力学",
+       "credits": 4,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "007026",
+       "name": "大气物理学基础",
+       "credits": 4,
+       "seasons": [
+        "秋"
+       ]
+      }
+     ],
+     "subs": []
+    },
+    {
+     "name": "专业选修课程",
+     "credits": 15,
+     "type": "pool",
+     "courses": [],
+     "subs": [
+      {
+       "name": "课程分组",
+       "credits": 0,
+       "type": "required",
+       "courses": [
+        {
+         "id": "022095",
+         "name": "量子力学C",
+         "credits": 3,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "007296",
+         "name": "大气电学",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "210515",
+         "name": "电子线路",
+         "credits": 4,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "ATMS4009",
+         "name": "气候学概论",
+         "credits": 2,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "EE2503",
+         "name": "电子线路实验",
+         "credits": 1,
+         "seasons": [
+          "秋",
+          "春"
+         ]
+        },
+        {
+         "id": "CS4023",
+         "name": "数据科学导论",
+         "credits": 2,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "ATMO5102P",
+         "name": "云和降水物理学",
+         "credits": 2,
+         "seasons": [
+          "秋",
+          "春",
+          "夏"
+         ]
+        }
+       ],
+       "subs": []
+      },
+      {
+       "name": "课程分组",
+       "credits": 0,
+       "type": "required",
+       "courses": [
+        {
+         "id": "007256",
+         "name": "大气科学专题讲座",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "007281",
+         "name": "遥感气象学",
+         "credits": 4,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "ATMO5101P",
+         "name": "空气污染气象学",
+         "credits": 3,
+         "seasons": [
+          "秋",
+          "春",
+          "夏"
+         ]
+        },
+        {
+         "id": "007231",
+         "name": "气象统计学原理及应用",
+         "credits": 2,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "007313",
+         "name": "大气物理实验",
+         "credits": 2,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "ATMS4002",
+         "name": "大气科学基础实习",
+         "credits": 1,
+         "seasons": [
+          "夏"
+         ]
+        },
+        {
+         "id": "ATMS4003",
+         "name": "Python数据可视化及地球科学应用",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "ATMS4004",
+         "name": "全球变化I",
+         "credits": 2,
+         "seasons": [
+          "秋"
+         ]
+        },
+        {
+         "id": "ATMS4005",
+         "name": "全球变化II",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "ATMS4006",
+         "name": "古气候学原理",
+         "credits": 2,
+         "seasons": [
+          "春"
+         ]
+        },
+        {
+         "id": "ATMS4010",
+         "name": "大气科学综合实习",
+         "credits": 1,
+         "seasons": [
+          "夏"
+         ]
+        },
+        {
+         "id": "ATMS4011",
+         "name": "人工智能与大气科学",
+         "credits": 4,
+         "seasons": [
+          "秋"
+         ]
+        }
+       ],
+       "subs": []
+      }
+     ]
+    },
+    {
+     "name": "毕业论文",
+     "credits": 8,
+     "type": "required",
+     "courses": [
+      {
+       "id": "THESIS",
+       "name": "毕业论文",
+       "credits": 8,
+       "seasons": [
+        "秋",
+        "春"
+       ]
+      }
+     ],
+     "subs": []
+    },
+    {
+     "name": "自由选修课",
+     "credits": 0,
+     "type": "free",
+     "courses": [],
+     "subs": []
+    }
+   ],
+   "_meta": {
+    "grade": "2026",
+    "major": "大气科学",
+    "department": "地球和空间科学学院"
+   }
+  },
+  {
+   "name": "大气科学培养方案（2025级双学位/辅修专业）",
+   "total": 40,
+   "freePool": true,
+   "thesis": {
+    "name": "毕业论文",
+    "credits": 8
+   },
+   "modules": [
+    {
+     "name": "必修",
+     "credits": 17,
+     "type": "required",
+     "courses": [
+      {
+       "id": "007001",
+       "name": "流体力学",
+       "credits": 4,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "007016",
+       "name": "动力气象学",
+       "credits": 4,
+       "seasons": [
+        "春"
+       ]
+      },
+      {
+       "id": "007026",
+       "name": "大气物理学基础",
+       "credits": 4,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "007277",
+       "name": "大气探测学",
+       "credits": 2,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "007286",
+       "name": "天气学",
+       "credits": 3,
+       "seasons": [
+        "春"
+       ]
+      }
+     ],
+     "subs": []
+    },
+    {
+     "name": "选修",
+     "credits": 15,
+     "type": "pool",
+     "courses": [
+      {
+       "id": "ATMO5102P",
+       "name": "云和降水物理学",
+       "credits": 2,
+       "seasons": [
+        "秋",
+        "春",
+        "夏"
+       ]
+      },
+      {
+       "id": "ATMS4003",
+       "name": "Python数据可视化及地球科学应用",
+       "credits": 2,
+       "seasons": [
+        "春"
+       ]
+      },
+      {
+       "id": "ATMS4009",
+       "name": "气候学概论",
+       "credits": 2,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "CS4023",
+       "name": "数据科学导论",
+       "credits": 2,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "ESS2008",
+       "name": "地球科学概论-大气海洋",
+       "credits": 2,
+       "seasons": [
+        "春"
+       ]
+      },
+      {
+       "id": "007231",
+       "name": "气象统计学原理及应用",
+       "credits": 2,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "007256",
+       "name": "大气科学专题讲座",
+       "credits": 2,
+       "seasons": [
+        "春"
+       ]
+      },
+      {
+       "id": "007281",
+       "name": "遥感气象学",
+       "credits": 4,
+       "seasons": [
+        "春"
+       ]
+      },
+      {
+       "id": "007296",
+       "name": "大气电学",
+       "credits": 2,
+       "seasons": [
+        "春"
+       ]
+      },
+      {
+       "id": "007313",
+       "name": "大气物理实验",
+       "credits": 2,
+       "seasons": [
+        "秋"
+       ]
+      },
+      {
+       "id": "MATH2001",
+       "name": "计算方法",
+       "credits": 3,
+       "seasons": [
+        "秋",
+        "春"
+       ]
+      }
+     ],
+     "subs": []
+    },
+    {
+     "name": "毕业论文",
+     "credits": 8,
+     "type": "required",
+     "courses": [
+      {
+       "id": "THESIS-M",
+       "name": "毕业论文",
+       "credits": 8,
+       "seasons": [
+        "秋",
+        "春"
+       ]
+      }
+     ],
+     "subs": []
+    }
+   ],
+   "_meta": {
+    "grade": "2025",
+    "major": "大气科学",
+    "department": "地球和空间科学学院"
+   }
+  }
+ ],
+ "offerings": {
+  "2026秋": [
+   {
+    "id": "022063",
+    "term": "2026秋",
+    "teacher": "何志成",
+    "time": "周二3-4节;周四6-7节",
+    "seats": "25/40",
+    "code": "022063.01"
+   },
+   {
+    "id": "CS1003",
+    "term": "2026秋",
+    "teacher": "郑重、周英华",
+    "time": "周二11-13节;周五8-10节",
+    "seats": "118/90",
+    "code": "CS1003.08"
+   },
+   {
+    "id": "ESS2006",
+    "term": "2026秋",
+    "teacher": "陈伊翔、陆高鹏、黄金水",
+    "time": "周二3-5节",
+    "seats": "149/150",
+    "code": "ESS2006.01"
+   },
+   {
+    "id": "CS1003",
+    "term": "2026秋",
+    "teacher": "王雷",
+    "time": "周一6-7节;周三1-2节;周三11-13节",
+    "seats": "98/90",
+    "code": "CS1003.15"
+   },
+   {
+    "id": "CS1003",
+    "term": "2026秋",
+    "teacher": "白雪飞",
+    "time": "周二8-10节;周四11-13节",
+    "seats": "92/90",
+    "code": "CS1003.01"
+   },
+   {
+    "id": "CS1003",
+    "term": "2026秋",
+    "teacher": "王百宗",
+    "time": "周三11-13节;周四8-10节",
+    "seats": "116/90",
+    "code": "CS1003.02"
+   },
+   {
+    "id": "CS1003",
+    "term": "2026秋",
+    "teacher": "谭立湘",
+    "time": "周二8-10节;周三11-13节",
+    "seats": "107/90",
+    "code": "CS1003.03"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "王国正",
+    "time": "周二8-10节",
+    "seats": "0/120",
+    "code": "HS1531.01"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "91/80",
+    "code": "HS1580M.09"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "张曼莉",
+    "time": "周二8-10节",
+    "seats": "0/120",
+    "code": "HS1531.02"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "227/135",
+    "code": "HS1580M.01"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "156/150",
+    "code": "HS1580M.02"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "何晓松",
+    "time": "周一8-10节",
+    "seats": "0/120",
+    "code": "HS1531.03"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "张效初、张隆华",
+    "time": "周四8-10节",
+    "seats": "0/120",
+    "code": "HS1531.04"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "杭雨霑",
+    "time": "周五8-10节",
+    "seats": "0/120",
+    "code": "HS1531.06"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "吕心游",
+    "time": "周四8-10节",
+    "seats": "0/120",
+    "code": "HS1531.05"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "徐晓飞",
+    "time": "周一8-10节",
+    "seats": "0/120",
+    "code": "HS1531.08"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "吴韡",
+    "time": "周五8-10节",
+    "seats": "0/120",
+    "code": "HS1531.07"
+   },
+   {
+    "id": "HS1531",
+    "term": "2026秋",
+    "teacher": "郭博文",
+    "time": "周四8-10节",
+    "seats": "0/120",
+    "code": "HS1531.09"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "245/280",
+    "code": "HS1580M.10"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "64/100",
+    "code": "HS1580M.11"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "170/130",
+    "code": "HS1580M.12"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "76/70",
+    "code": "HS1580M.13"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "373/360",
+    "code": "HS1580M.03"
+   },
+   {
+    "id": "HS1580M",
+    "term": "2026秋",
+    "teacher": "",
+    "time": "",
+    "seats": "136/170",
+    "code": "HS1580M.14"
+   }
+  ]
+ },
+ "_source": "catalog.ustc.edu.cn 公开目录 + jw.ustc.edu.cn 个人数据(可选)",
+ "_fetchedAt": "2026-08-29 02:51:16",
+ "_note": "真实抓取的精简样例：2026秋全部开课(截取)+大气科学2026主修+2025辅修培养方案"
+}
